@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/ammunition/bullet.png" type="Texture" id=1]
+[ext_resource path="res://UI/ammunition/bulletFill.png" type="Texture" id=2]
+[ext_resource path="res://UI/ammunition/ammunition.gd" type="Script" id=3]
+
+[node name="ammunition" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -306.0
+margin_bottom = -166.0
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+fill = ExtResource( 2 )
+
+[node name="fill" type="TextureRect" parent="."]
+margin_right = 14.0
+margin_bottom = 14.0
+texture = ExtResource( 2 )
