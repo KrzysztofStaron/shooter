@@ -9,3 +9,9 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	position += Vector2(0, -bullet.speed).rotated(angle) * delta
+
+func _on_bullet_body_entered(body: Node) -> void:
+	if body.has_method("takeDamage"):
+		body.takeDamage(bullet.damage)
+	
+	queue_free()
