@@ -37,7 +37,7 @@ stuffs/discord="https://discord.gg/PwsWJAqTu9"
 
 [autoload]
 
-InputManager="*res://input_manager.gd"
+InputManager="*res://other/InputManager.gd"
 
 [display]
 
