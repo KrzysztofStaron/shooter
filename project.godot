@@ -24,11 +24,16 @@ _global_script_class_icons={
 "weaponData": ""
 }
 
+[Config]
+
+socials/discord/link="https://discord.gg/PwsWJAqTu9"
+
 [application]
 
-config/name="Alpha Project"
+config/name="Project Alpha"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
+stuffs/discord="https://discord.gg/PwsWJAqTu9"
 
 [autoload]
 

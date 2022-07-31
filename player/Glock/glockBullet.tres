@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource( 1 )
 damage = 5
-speed = 540
+speed = 800
 texture = ExtResource( 2 )
