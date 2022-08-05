@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://UI/ammunition/ammunitionUI.gd" type="Script" id=1]
-[ext_resource path="res://UI/ammunition/ammunition.gd" type="Script" id=2]
-[ext_resource path="res://UI/ammunition/bulletFill.png" type="Texture" id=3]
-[ext_resource path="res://UI/ammunition/bullet.png" type="Texture" id=4]
+[ext_resource path="res://UI/m3x6.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://UI/ammunition/ammunition.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
 
 [node name="GUI" type="MarginContainer"]
 margin_right = 40.0
@@ -14,26 +15,38 @@ custom_constants/margin_top = 3
 custom_constants/margin_left = 3
 custom_constants/margin_bottom = 3
 
-[node name="ammunition" type="HBoxContainer" parent="."]
+[node name="vContainer" type="VBoxContainer" parent="."]
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 37.0
 margin_bottom = 37.0
 custom_constants/separation = 0
+
+[node name="ammunition" type="HBoxContainer" parent="vContainer"]
+margin_right = 34.0
+margin_bottom = 14.0
+custom_constants/separation = 0
 script = ExtResource( 1 )
 ammoContainers = 2
 
-[node name="ammo1" type="TextureRect" parent="ammunition" instance=ExtResource( 5 )]
+[node name="ammo1" parent="vContainer/ammunition" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 14.0
-margin_bottom = 34.0
-texture = ExtResource( 4 )
-script = ExtResource( 2 )
-fill = ExtResource( 3 )
+margin_bottom = 14.0
 
-[node name="ammo2" type="TextureRect" parent="ammunition" instance=ExtResource( 5 )]
+[node name="ammo2" parent="vContainer/ammunition" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 14.0
 margin_right = 28.0
-margin_bottom = 34.0
-texture = ExtResource( 4 )
-script = ExtResource( 2 )
-fill = ExtResource( 3 )
+margin_bottom = 14.0
+
+[node name="ammo" type="Label" parent="vContainer"]
+margin_top = 14.0
+margin_right = 34.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 1 )
+text = "23/23"
+align = 1
+valign = 1

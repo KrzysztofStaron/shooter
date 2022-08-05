@@ -10,6 +10,8 @@ func _ready() -> void:
 	maxAmmo = ammoContainers * ammoPerContainer
 	ammo = maxAmmo
 	
+	get_node("../ammo").text = str(ammo, "/", maxAmmo) 
+	
 	for i in ammoContainers:
 		get_node(str("ammo", i+1)).maxAmmo = ammoPerContainer
 		get_node(str("ammo", i+1)).ammo = ammoPerContainer
@@ -19,7 +21,7 @@ func reload():
 	for i in range(1, ammoContainers+1):
 		get_node(str("ammo", i)).ammo = ammoPerContainer
 
-func removeAmmo(ammoToRemove : int = 1) -> void:	
+func removeAmmo(ammoToRemove : int = 1) -> void:
 	if ammoToRemove > ammo:
 		return
 		
@@ -33,5 +35,6 @@ func removeAmmo(ammoToRemove : int = 1) -> void:
 		else:
 			ammoToRemove -= container.ammo
 			container.ammo = 0
-			
+	
+	get_node("../ammo").text = str(ammo, "/", maxAmmo) 
 		

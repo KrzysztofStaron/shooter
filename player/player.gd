@@ -11,7 +11,7 @@ var animation
 var lastAnimation
 
 func reload():
-	get_node("../GUI/ammunition").reload()
+	get_node("../GUI/vContainer/ammunition").reload()
 
 func _process(_delta) -> void:
 	if oldWeapon != weapon:
@@ -55,7 +55,7 @@ func _process(_delta) -> void:
 				animation.travel("idle")
 
 func shoot():
-	if get_node("../GUI/ammunition").ammo < weapon.ammoPerShoot:
+	if get_node("../GUI/vContainer/ammunition").ammo < weapon.ammoPerShoot:
 		return
 	
 	match weapon.weaponName:
@@ -68,4 +68,4 @@ func shoot():
 			newBullet.set_global_position($gunPos.get_global_position())
 			
 			get_parent().add_child(newBullet)
-			get_node("../GUI/ammunition").removeAmmo(weapon.ammoPerShoot)
+			get_node("../GUI/vContainer/ammunition").removeAmmo(weapon.ammoPerShoot)
