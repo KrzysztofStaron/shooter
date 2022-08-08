@@ -140,7 +140,7 @@ gameScene = ExtResource( 9 )
 position = Vector2( 160, 90 )
 scale = Vector2( 1.28125, 1.41045 )
 frames = SubResource( 29 )
-frame = 15
+frame = 7
 playing = true
 
 [node name="discord" parent="AnimatedSprite" instance=ExtResource( 1 )]
@@ -173,6 +173,8 @@ stretch_mode = 3
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 7 )
+
+[node name="audio" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="AnimatedSprite/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="AnimatedSprite/settings" to="." method="_on_settings_pressed"]

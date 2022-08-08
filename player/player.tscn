@@ -2,7 +2,7 @@
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/Glock/textures/idle.png" type="Texture" id=2]
-[ext_resource path="res://player/Glock/gloackData.tres" type="Resource" id=3]
+[ext_resource path="res://player/Glock/bullet/gloackData.tres" type="Resource" id=3]
 [ext_resource path="res://player/textures/Hand/handIdle.png" type="Texture" id=4]
 [ext_resource path="res://player/textures/Hand/walking.png" type="Texture" id=5]
 [ext_resource path="res://player/Glock/textures/walking.png" type="Texture" id=6]

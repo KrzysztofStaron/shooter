@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://player/bullet/particles.gd" type="Script" id=1]
+
+[node name="particles" type="AnimatedSprite"]
+playing = true
+script = ExtResource( 1 )
+
+[connection signal="animation_finished" from="." to="." method="_on_particles_animation_finished"]

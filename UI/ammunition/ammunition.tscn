@@ -5,6 +5,7 @@
 [ext_resource path="res://UI/ammunition/ammunition.gd" type="Script" id=3]
 
 [node name="ammunition" type="TextureRect"]
+self_modulate = Color( 0.588235, 0.588235, 0.588235, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -306.0
