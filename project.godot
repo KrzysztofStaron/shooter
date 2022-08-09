@@ -9,25 +9,30 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Control",
+"class": "Option",
+"language": "GDScript",
+"path": "res://UI/settingsScreen/settings/option.gd"
+}, {
 "base": "Resource",
 "class": "Setting",
 "language": "GDScript",
 "path": "res://UI/settingsScreen/settings/types/setting.gd"
 }, {
-"base": "Resource",
-"class": "bulletData",
-"language": "GDScript",
-"path": "res://player/bullet/bulletData.gd"
-}, {
 "base": "Setting",
-"class": "settingCheckbox",
+"class": "SettingCheckbox",
 "language": "GDScript",
 "path": "res://UI/settingsScreen/settings/types/settingCheckbox.gd"
 }, {
 "base": "Setting",
-"class": "settingMultiButton",
+"class": "SettingMultiButton",
 "language": "GDScript",
-"path": "res://UI/settingsScreen/settings/types/settingMultiButton.gd"
+"path": "res://UI/settingsScreen/settings/multiButton/settingMultiButton.gd"
+}, {
+"base": "Resource",
+"class": "bulletData",
+"language": "GDScript",
+"path": "res://player/bullet/bulletData.gd"
 }, {
 "base": "Setting",
 "class": "settingSlider",
@@ -40,10 +45,11 @@ _global_script_classes=[ {
 "path": "res://player/weaponData.gd"
 } ]
 _global_script_class_icons={
+"Option": "",
 "Setting": "",
+"SettingCheckbox": "",
+"SettingMultiButton": "",
 "bulletData": "",
-"settingCheckbox": "",
-"settingMultiButton": "",
 "settingSlider": "",
 "weaponData": ""
 }
@@ -68,7 +74,6 @@ InputManager="*res://other/InputManager.gd"
 
 window/size/width=320
 window/size/height=180
-window/size/fullscreen=true
 window/size/test_width=704
 window/size/test_height=396
 window/stretch/mode="2d"

@@ -1,4 +1,4 @@
 extends Setting
-class_name settingCheckbox
+class_name SettingCheckbox
 
-var value : bool
+const type := "checkbox"
