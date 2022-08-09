@@ -4,6 +4,7 @@
 
 [node name="particles" type="AnimatedSprite"]
 playing = true
+offset = Vector2( 1, 0 )
 script = ExtResource( 1 )
 
 [connection signal="animation_finished" from="." to="." method="_on_particles_animation_finished"]

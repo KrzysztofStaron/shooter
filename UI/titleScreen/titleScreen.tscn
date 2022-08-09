@@ -140,7 +140,7 @@ gameScene = ExtResource( 9 )
 position = Vector2( 160, 90 )
 scale = Vector2( 1.28125, 1.41045 )
 frames = SubResource( 29 )
-frame = 7
+frame = 17
 playing = true
 
 [node name="discord" parent="AnimatedSprite" instance=ExtResource( 1 )]

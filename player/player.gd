@@ -4,6 +4,8 @@ export var bullet : PackedScene
 export var speed : float 
 export var speedMultiplayer := 1.0
 
+export var gunRised := false 
+
 export var weapon : Resource
 var oldWeapon : Resource
 
@@ -25,12 +27,7 @@ func _process(_delta) -> void:
 		
 		oldWeapon = weapon
 	
-	
 	var mousePos := get_local_mouse_position()
-	
-	var angle := atan2(mousePos.y, mousePos.x) 
-	angle = deg2rad(rad2deg(angle) + 90)
-	rotate(angle)
 		
 	var dir : Vector2 = InputManager.vector("move_left", "move_right", "move_up", "move_down")
 	match weapon.weaponName:
@@ -44,15 +41,33 @@ func _process(_delta) -> void:
 		"glock":
 			move_and_slide(dir * speed * speedMultiplayer)
 			
-			if Input.is_action_just_pressed("shoot"):
+			if Input.is_action_just_pressed("grab"):
+				gunRised = !gunRised
+				
+			if Input.is_action_just_pressed("shoot") and gunRised:
 				animation.travel("shoot")
 			elif Input.is_action_just_pressed("reload"):
+				gunRised = true
 				print("reload")
 				animation.travel("reload")
 			elif dir != Vector2.ZERO:
-				animation.travel("walking")
+				if !gunRised:
+					set_rotation(atan2(dir.x, -dir.y))
+					animation.travel("walking")
+				else:
+					animation.travel("walkingRised")
+					
 			else:
-				animation.travel("idle")
+				if gunRised:
+					animation.travel("idleRised")
+				else:
+					animation.travel("idle")
+	
+	var angle := atan2(mousePos.y, mousePos.x) 
+	
+	if gunRised:
+		angle += deg2rad(90)
+		rotate(angle)
 
 func shoot():
 	if get_node("../GUI/vContainer/ammunition").ammo < weapon.ammoPerShoot:

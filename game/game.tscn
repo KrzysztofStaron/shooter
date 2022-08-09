@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://UI/ammunition/GUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/GUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://environment/object.gd" type="Script" id=3]
 
 [node name="game" type="Node"]

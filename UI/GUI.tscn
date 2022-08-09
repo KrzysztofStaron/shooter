@@ -7,13 +7,7 @@
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
 
-[node name="GUI" type="MarginContainer"]
-margin_right = 40.0
-margin_bottom = 40.0
-custom_constants/margin_right = 3
-custom_constants/margin_top = 3
-custom_constants/margin_left = 3
-custom_constants/margin_bottom = 3
+[node name="GUI" type="CanvasLayer"]
 
 [node name="vContainer" type="VBoxContainer" parent="."]
 margin_left = 3.0

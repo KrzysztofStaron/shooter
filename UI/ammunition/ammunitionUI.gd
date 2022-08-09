@@ -5,6 +5,13 @@ var maxAmmo : int
 
 export var ammoContainers : int
 export var ammoPerContainer := 6
+onready var lookType : int = ProjectSettings.get_setting("Config/settings/ammoCounter")
+ 
+enum {
+	TYPE_COUNTER,
+	TYPE_GRAPHIC,
+	TYPE_BOTH
+}
 
 func _ready() -> void:
 	maxAmmo = ammoContainers * ammoPerContainer
