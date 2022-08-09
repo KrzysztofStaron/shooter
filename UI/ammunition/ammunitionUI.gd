@@ -27,6 +27,8 @@ func reload():
 	ammo = maxAmmo
 	for i in range(1, ammoContainers+1):
 		get_node(str("ammo", i)).ammo = ammoPerContainer
+		
+	get_node("../ammo").text = str(ammo, "/", maxAmmo) 
 
 func removeAmmo(ammoToRemove : int = 1) -> void:
 	if ammoToRemove > ammo:

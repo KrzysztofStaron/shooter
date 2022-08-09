@@ -4,7 +4,7 @@ export var bullet : PackedScene
 export var speed : float 
 export var speedMultiplayer := 1.0
 
-export var gunRised := false 
+export var gunRised := true
 
 export var weapon : Resource
 var oldWeapon : Resource

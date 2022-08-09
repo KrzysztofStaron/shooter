@@ -6,25 +6,9 @@ var ammo : int setget ammoSetter
 
 func ammoSetter(count : int):
 	ammo = count
-	generateTexture()
+	var persent := 100.0 / maxAmmo * ammo
+	var fillPersent : float = $fill.get_material().get_shader_param("persent")
 	
-func generateTexture():
-	var newFill : Image = fill.get_data()
-	newFill.lock()
-	
-	# here you can specify texture height
-	var yLimit := Vector2(1, newFill.get_height()-3)
-	var dif := yLimit.y - yLimit.x
-	var pixelsPerBullet := dif/maxAmmo
-	yLimit.y -= pixelsPerBullet * ammo
-	
-	for y in range(yLimit.x, yLimit.y):
-		for x in range(1, 18):
-			newFill.set_pixel(x, y, Color(0, 0, 0, 0))
-	
-	var fillTexture : ImageTexture = ImageTexture.new()
-	fillTexture.create_from_image(newFill, 0)
-	
-	$fill.texture = fillTexture
-		
-	
+	$Tween.stop_all()
+	$Tween.interpolate_property($fill.get_material(), "shader_param/persent", fillPersent, persent, 0.2, Tween.TRANS_QUINT, Tween.EASE_IN)
+	$Tween.start()
